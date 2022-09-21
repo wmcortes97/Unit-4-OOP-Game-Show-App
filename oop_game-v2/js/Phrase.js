@@ -13,7 +13,7 @@ class Phrase {
       if (splitPhrase[i] !== " ") {
         html += `<li class="hide letter ${splitPhrase[i]}">${splitPhrase[i]}</li>`;
       } else {
-        html += `<li class="space">" "</li>`;
+        html += `<li class="space"></li>`;
       }
     }
 
