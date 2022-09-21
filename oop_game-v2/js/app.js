@@ -2,6 +2,12 @@
  * Project 4 - OOP Game App
  * app.js */
 
-const startGame = document.getElementById("btn_reset");
-
-//startGame.addEventListener("click", startGame);
+const logPhrase = (phrase) => {
+  console.log(`Phrase - phrase: `, phrase.phrase);
+};
+const game = new Game();
+logPhrase(game.getRandomPhrase());
+logPhrase(game.getRandomPhrase());
+logPhrase(game.getRandomPhrase());
+logPhrase(game.getRandomPhrase());
+logPhrase(game.getRandomPhrase());
