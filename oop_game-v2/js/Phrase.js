@@ -19,17 +19,37 @@ class Phrase {
 
     document.querySelector("#phrase ul").innerHTML = html;
   }
-  // checkLetter() {
-  //   let letters = document.querySelectorAll(".key"); //returns all the elements with the class "key"
-
-  //   letters.addEventListener("click", e => {
-  //     if (e.target === ) {
-
-  //     }
-  //   })
-
-  // }
-  // showMatchedLetter() {
-
-  // }
+  checkLetter(letter) {
+    //return boolean?
+    let splitPhrase = this.phrase.split("");
+    splitPhrase.forEach((character) => {
+      if (character === letter) {
+        return true;
+      }
+    });
+    return false;
+  }
+  showMatchedLetter(letter) {
+    if (this.checkLetter(letter)) {
+      let letterMatches = document.querySelectorAll(`.${letter}`);
+      for (let i = 0; i < letterMatches.length; i++) {
+        letterMatches[i].classList.add("show");
+        letterMatches[i].classList.remove("hide");
+      }
+    }
+  }
 }
+
+// litPhrase.length; i++) {
+//         if (e.target.textContent === splitPhrase[i]) {
+//          return true;
+//         } else {let keyboard = document.getElementById("qwerty"); //returns all the elements with the class "key"
+
+//     keyboard.addEventListener("click", (e) => {
+//       let splitPhrase = this.phrase.split("");
+//       for (let i = 0; i < sp
+//           return false;
+//         }
+//       }
+
+//     })
