@@ -18,7 +18,7 @@ class Game {
     let quoteObject = this.phrases[Math.floor(Math.random() * 5)];
     return quoteObject;
   }
-  startGame(getRandomPhrase) {
+  startGame() {
     let startScreenOverlay = document.getElementById("overlay");
     startScreenOverlay.style.display = "none";
     let currentPhrase = this.getRandomPhrase(); //must store so it only holds one random phrase object
