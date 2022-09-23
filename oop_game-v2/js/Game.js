@@ -33,27 +33,36 @@ won
   checkForWin() {
     let letters = document.querySelectorAll(".letter"); //returns all li's
     let lettersArr = Array.from(letters);
-    lettersArr.every((letter) => {
-      return letter.matches(".show");
-    });
+
+    return lettersArr.every((letter) => letter.matches(".show"));
+    // let hidden = document.querySelectorAll(".hide");
+    // for (let i = 0; i < hidden.length; i++) {
+    //   if (hidden[i].matches === ".hide") {
+    //     return true;
+    //   } else {
+    //     return ;
+    //   }
+    // }
   }
+
   /**
    * Increases the value of the missed property
    * Removes a life from the scoreboard
    * Checks if player has remaining lives and ends game if player is out
    */
   removeLife() {
-    let heartLife = document.querySelectorAll("#scoreboard li"); //returns heart li's
+    let heartLife = document.querySelectorAll("#scoreboard img"); //returns heart li's
 
-    for (let i = 0; i < heartLife.length; i++)
-      if (1 < 0) {
-        this.missed += 1;
-        let heartImg = heartLife[i].firstChild;
-        heartImg.setAttribute("src", "images/lostHeart.png");
-        if (this.missed === 5) {
-          gameOver(gameWon);
-        }
-      }
+    for (let i = 0; i < heartLife.length + 1; i++) {
+      // if (this.startGame.checkLetter(letter) === false) {
+      //this.missed += 1;
+      let heartImg = heartLife[i];
+      heartImg.setAttribute("src", "images/lostHeart.png");
+      // if (this.missed === 5) {
+      //   this.gameOver(gameWon);
+      //   //}
+      // }
+    }
   }
   /**
    * Displays game over message
