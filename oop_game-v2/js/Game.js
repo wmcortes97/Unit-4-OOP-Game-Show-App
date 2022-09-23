@@ -35,14 +35,6 @@ won
     let lettersArr = Array.from(letters);
 
     return lettersArr.every((letter) => letter.matches(".show"));
-    // let hidden = document.querySelectorAll(".hide");
-    // for (let i = 0; i < hidden.length; i++) {
-    //   if (hidden[i].matches === ".hide") {
-    //     return true;
-    //   } else {
-    //     return ;
-    //   }
-    // }
   }
 
   /**
@@ -53,17 +45,15 @@ won
   removeLife() {
     let heartLife = document.querySelectorAll("#scoreboard img"); //returns heart li's
 
-    for (let i = 0; i < heartLife.length + 1; i++) {
-      // if (this.startGame.checkLetter(letter) === false) {
-      //this.missed += 1;
-      let heartImg = heartLife[i];
-      heartImg.setAttribute("src", "images/lostHeart.png");
-      // if (this.missed === 5) {
-      //   this.gameOver(gameWon);
-      //   //}
-      // }
-    }
+    let heartImg = heartLife[this.missed];
+    heartImg.setAttribute("src", "images/lostHeart.png");
+    this.missed += 1;
+    // if (this.missed === 5) {
+    //   this.gameOver(gameWon);
+    //   //}
+    // }
   }
+
   /**
    * Displays game over message
    * @param {boolean} gameWon - Whether or not the user won the game
