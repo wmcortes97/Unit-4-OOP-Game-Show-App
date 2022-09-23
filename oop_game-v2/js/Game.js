@@ -74,6 +74,10 @@ won
       startScreenOverlay.className = "lose";
     }
   }
+  /**
+   *Handles game logic
+   * @param {target element} button - holds the element of the key button
+   */
   handleInteraction(button) {
     let splitPhrase = this.activePhrase.phrase.split("");
     if (splitPhrase.includes(button.textContent)) {
