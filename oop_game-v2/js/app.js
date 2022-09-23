@@ -8,3 +8,12 @@ let startButton = document.getElementById("btn__reset");
 startButton.addEventListener("click", () => {
   (game = new Game()).startGame();
 });
+
+let keys = document.getElementById("qwerty");
+
+keys.addEventListener("click", (e) => {
+  if (e.target.className === "key") {
+    let button = e.target;
+    game.handleInteraction(button);
+  }
+});

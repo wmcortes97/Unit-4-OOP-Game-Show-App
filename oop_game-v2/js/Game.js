@@ -70,4 +70,7 @@ won
       startScreenOverlay.className = "lose";
     }
   }
+  handleInteraction(button) {
+    console.log(button);
+  }
 }
