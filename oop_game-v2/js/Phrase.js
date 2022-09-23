@@ -19,16 +19,24 @@ class Phrase {
 
     document.querySelector("#phrase ul").innerHTML = html;
   }
+  /**
+   * Checks if passed letter is in phrase
+   * @param (string) letter - Letter to check
+   */
   checkLetter(letter) {
-    //return boolean?
     let splitPhrase = this.phrase.split("");
-    splitPhrase.forEach((character) => {
-      if (character === letter) {
+
+    for (let i = 0; i < splitPhrase.length; i++) {
+      if (splitPhrase[i] === letter) {
         return true;
       }
-    });
+    }
     return false;
   }
+  /**
+   * Displays passed letter on screen after a match is found
+   * @param (string) letter - Letter to display
+   */
   showMatchedLetter(letter) {
     if (this.checkLetter(letter)) {
       let letterMatches = document.querySelectorAll(`.${letter}`);
@@ -39,17 +47,3 @@ class Phrase {
     }
   }
 }
-
-// litPhrase.length; i++) {
-//         if (e.target.textContent === splitPhrase[i]) {
-//          return true;
-//         } else {let keyboard = document.getElementById("qwerty"); //returns all the elements with the class "key"
-
-//     keyboard.addEventListener("click", (e) => {
-//       let splitPhrase = this.phrase.split("");
-//       for (let i = 0; i < sp
-//           return false;
-//         }
-//       }
-
-//     })

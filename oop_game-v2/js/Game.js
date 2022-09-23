@@ -15,8 +15,8 @@ class Game {
     this.actvePhrase = null;
   }
   getRandomPhrase() {
-    let quoteObject = this.phrases[Math.floor(Math.random() * 5)];
-    return quoteObject;
+    let randomPhraseObject = this.phrases[Math.floor(Math.random() * 5)];
+    return randomPhraseObject;
   }
   startGame() {
     let startScreenOverlay = document.getElementById("overlay");
@@ -25,4 +25,54 @@ class Game {
     this.activePhrase = currentPhrase;
     currentPhrase.addPhraseToDisplay();
   }
+  /**'
+* Checks for winning move
+* @return {boolean} True if game has been won, false if game wasn't
+won
+*/
+  checkForWin() {
+    // let win = false;
+    // //let li_Letters = document.getElementsByClassName("letter");
+
+    // for (let i = 0, i < li_Letters.length; i ++) {
+    //   if(li_Letters[i].innerHTML ===  ) {
+    //     win = true;
+
+    //   } else {
+    //     win = false;
+    //   }
+    //   return win;
+    // }
+    if (checkLetter(letter)) {
+      return true;
+    }
+  }
+  /**
+   * Increases the value of the missed property
+   * Removes a life from the scoreboard
+   * Checks if player has remaining lives and ends game if player is out
+   */
+  removeLife() {
+    let heartLife = document.querySelectorAll("#scoreboard li"); //returns heart li's
+
+    for (let i = 0; i < heartLife.length; i++)
+      if (1 < 0) {
+        this.missed += 1;
+        let heartImg = heartLife[i].firstChild;
+        heartImg.setAttribute("src", "images/lostHeart.png");
+        if (this.missed === 5) {
+          gameOver(gameWon);
+        }
+      }
+  }
+  /**
+   * Displays game over message
+   * @param {boolean} gameWon - Whether or not the user won the game
+   */
+  // gameOver(gameWon) {
+  //   if () {
+
+  //   }
+
+  // }
 }
