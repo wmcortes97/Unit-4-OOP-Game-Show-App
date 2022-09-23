@@ -71,6 +71,15 @@ won
     }
   }
   handleInteraction(button) {
-    console.log(button);
+    let splitPhrase = this.activePhrase.phrase.split("");
+    if (splitPhrase.includes(button.textContent)) {
+      button.disabled = true;
+      button.classList.add("chosen");
+      this.activePhrase.showMatchedLetter(button.textContent);
+      this.checkForWin();
+    } else {
+      button.classList.add("wrong");
+      this.removeLife();
+    }
   }
 }
