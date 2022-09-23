@@ -31,21 +31,11 @@ class Game {
 won
 */
   checkForWin() {
-    // let win = false;
-    // //let li_Letters = document.getElementsByClassName("letter");
-
-    // for (let i = 0, i < li_Letters.length; i ++) {
-    //   if(li_Letters[i].innerHTML ===  ) {
-    //     win = true;
-
-    //   } else {
-    //     win = false;
-    //   }
-    //   return win;
-    // }
-    if (checkLetter(letter)) {
-      return true;
-    }
+    let letters = document.querySelectorAll(".letter"); //returns all li's
+    let lettersArr = Array.from(letters);
+    lettersArr.every((letter) => {
+      return letter.matches(".show");
+    });
   }
   /**
    * Increases the value of the missed property
