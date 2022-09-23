@@ -48,20 +48,26 @@ won
     let heartImg = heartLife[this.missed];
     heartImg.setAttribute("src", "images/lostHeart.png");
     this.missed += 1;
-    // if (this.missed === 5) {
-    //   this.gameOver(gameWon);
-    //   //}
-    // }
+    if (this.missed === 5) {
+      this.gameOver(false);
+    }
   }
 
   /**
    * Displays game over message
    * @param {boolean} gameWon - Whether or not the user won the game
    */
-  // gameOver(gameWon) {
-  //   if () {
+  gameOver(gameWon) {
+    let startScreenOverlay = document.getElementById("overlay");
+    startScreenOverlay.style.display = "";
+    let messageSelection = document.querySelector("h1");
 
-  //   }
-
-  // }
+    if (gameWon) {
+      messageSelection.innerHTML = "YOU WON";
+      startScreenOverlay.className = "win";
+    } else {
+      messageSelection.innerHTML = "YOU LOST";
+      startScreenOverlay.className = "lose";
+    }
+  }
 }
