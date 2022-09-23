@@ -33,3 +33,14 @@ keys.addEventListener("click", (e) => {
     game.handleInteraction(button);
   }
 });
+
+keys.addEventListener("keydown", (e) => {
+  let phrase = document.querySelectorAll("#phrase li");
+  for (let i = 0; i < phrase.length; i++) {
+    let letter = phrase[i].textContent.toUpperCase();
+    if (e.code === `Key${letter}`) {
+      let button = e.target;
+      game.handleInteraction(button);
+    }
+  }
+});
