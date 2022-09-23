@@ -12,7 +12,7 @@ class Game {
       new Phrase("Focus on the present"),
       new Phrase("A day without laughter is a day wasted"),
     ];
-    this.actvePhrase = null;
+    this.activePhrase = null;
   }
   getRandomPhrase() {
     let randomPhraseObject = this.phrases[Math.floor(Math.random() * 5)];
