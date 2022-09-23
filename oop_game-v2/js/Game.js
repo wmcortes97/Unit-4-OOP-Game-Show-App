@@ -34,7 +34,11 @@ won
     let letters = document.querySelectorAll(".letter"); //returns all li's
     let lettersArr = Array.from(letters);
 
-    return lettersArr.every((letter) => letter.matches(".show"));
+    let win = lettersArr.every((letter) => letter.matches(".show"));
+    if (win === true) {
+      this.gameOver(win);
+    }
+    return win;
   }
 
   /**
